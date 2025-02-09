@@ -24,10 +24,13 @@ pub fn parse_files(path:String, search_for:String, file_ext:String){
                 if String::from(file_path.file_name().unwrap().to_str().unwrap()).ends_with(&file_ext) || file_ext=="_"{
                     for (num,line) in lines.lines().enumerate(){
                         if line.contains(search_for.as_str()){
+
                             println!("====> peeking inside the file {}", file_path.to_str().unwrap());
                             println!();
                             println!("  |{} | {}",num+1, line);
+                            println!();
                             println!("________________________________________________________________________________________");
+                            println!();
                         }
                     }
                 }
