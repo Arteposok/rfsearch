@@ -22,13 +22,11 @@ pub fn parse_files(path:String, search_for:String, file_ext:String){
             } else if let Ok(lines)=fs::read_to_string(file_path.clone()){
                 if !is_text(file_path.to_str().unwrap()).unwrap(){return}
                 if String::from(file_path.file_name().unwrap().to_str().unwrap()).ends_with(&file_ext) || file_ext=="_"{
-                    println!("      |]=====>> peeking inside the file {} <<=====[|", file_path.to_str().unwrap());
-                    println!();
-                    println!("________________________________________________________________________________________");
                     for (num,line) in lines.lines().enumerate(){
                         if line.contains(search_for.as_str()){
+                            println!("====> peeking inside the file {}", file_path.to_str().unwrap());
                             println!();
-                            println!("|{} | {}",num+1, line);
+                            println!("  |{} | {}",num+1, line);
                             println!("________________________________________________________________________________________");
                         }
                     }
