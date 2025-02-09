@@ -5,12 +5,12 @@ fn main() {
     let mut args=env::args();
     args.next();
     let dir_path=args.next().unwrap_or_else(||{
-        eprintln!("rfsearch [path] [regex] ?[parallel?]");
+        eprintln!("rfsearch [path] [regex] ?[file extension filter?] ?[parallel?]");
         eprintln!("specify the directorry path please!");
         process::exit(1);
     });
     let regex=args.next().unwrap_or_else(||{
-        eprintln!("rfsearch [path] [regex] ?[parallel?]");
+        eprintln!("rfsearch [path] [regex] ?[file extension filter?] ?[parallel?]");
         eprintln!("specify the search string please!");
         process::exit(1);
     });
